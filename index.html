@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🚗 AutoBill Validator Pro | Automobile-Only Verification</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Animated Background -->
+  <div class="bg-animation">
+    <div class="floating-shape shape-1"></div>
+    <div class="floating-shape shape-2"></div>
+    <div class="floating-shape shape-3"></div>
+    <div class="floating-shape shape-4"></div>
+    <div class="pulse-dot dot-1"></div>
+    <div class="pulse-dot dot-2"></div>
+    <div class="pulse-dot dot-3"></div>
+    <div class="pulse-dot dot-4"></div>
+    <div class="moving-line line-1"></div>
+    <div class="moving-line line-2"></div>
+  </div>
+
+  <!-- Theme Toggle -->
+  <div class="theme-toggle" id="themeToggle">
+    <i class="fas fa-moon"></i>
+  </div>
+
+  <!-- Volume Control -->
+  <div class="volume-control">
+    <i class="fas fa-volume-up" style="color: var(--primary);"></i>
+    <input type="range" id="volumeSlider" class="volume-slider" min="0" max="1" step="0.1" value="0.7">
+  </div>
+
+  <div class="container">
+    <header>
+      <div class="logo">
+        <div class="logo-icon">
+          <i class="fas fa-file-invoice-dollar"></i>
+        </div>
+        <div class="logo-text">
+          <h1>AutoBill Validator Pro</h1>
+          <p class="subtitle">Automobile-Only Expense Verification System</p>
+        </div>
+      </div>
+      <div class="status-container">
+        <div id="status">Checking system status...</div>
+      </div>
+    </header>
+    
+    <div class="dashboard">
+      <div class="upload-section">
+        <h2 class="section-title"><i class="fas fa-upload"></i> Upload Bill</h2>
+        <div class="upload-area" id="uploadArea">
+          <i class="fas fa-cloud-upload-alt"></i>
+          <p>Drag & Drop or Click to Upload</p>
+          <p class="file-types">Supported formats: JPG, PNG, PDF, TXT, DOCX</p>
+        </div>
+        <input type="file" id="fileInput" class="file-input" accept=".jpg,.jpeg,.png,.pdf,.txt,.docx" />
+        
+        <div class="action-buttons">
+          <button class="btn btn-primary" onclick="processFile()">
+            <i class="fas fa-check-circle"></i> Validate Expense
+          </button>
+          <button class="btn btn-secondary btn-preview" onclick="previewBill()">
+            <i class="fas fa-eye"></i> Preview Bill
+          </button>
+          <button class="btn btn-secondary" onclick="clearAll()">
+            <i class="fas fa-trash-alt"></i> Clear All
+          </button>
+        </div>
+      </div>
+      
+      <div class="preview-section">
+        <h2 class="section-title"><i class="fas fa-eye"></i> Document Preview</h2>
+        <div class="preview-card" id="previewCard">
+          <div class="preview-card-inner">
+            <div class="preview-card-front">
+              <div class="preview-placeholder">
+                <i class="fas fa-file-invoice"></i>
+              </div>
+              <p>Upload a file to preview</p>
+            </div>
+            <div class="preview-card-back">
+              <p>Flip to see file preview</p>
+              <p style="font-size: 3rem; margin-top: 15px;">🔄</p>
+              <p class="flip-instruction">Click to flip back</p>
+            </div>
+          </div>
+        </div>
+        <div class="progress-container" id="progressContainer" style="display: none;">
+          <div class="progress-bar" id="progressBar"></div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="results-section" id="resultsSection" style="display: none;">
+      <h2 class="section-title"><i class="fas fa-chart-bar"></i> Validation Results</h2>
+      <div id="validationResult"></div>
+    </div>
+    
+    <footer>
+    </footer>
+  </div>
+
+  <!-- Modal Preview -->
+  <div class="modal-preview" id="modalPreview">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeModal()">&times;</span>
+      <img id="modalImage" src="" alt="Bill Preview">
+      <div class="modal-info">
+        <h3>Bill Preview</h3>
+        <p id="modalFileName"></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
