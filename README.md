@@ -319,13 +319,9 @@ flowchart LR
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a pull request
 
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
 ## 👨‍💻 Author
 
-**Made by Satyajit**
+**Made by Team NBI**
 
 ## 🙏 Acknowledgments
 
@@ -336,7 +332,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Support
 
-For support, email [your-email@example.com](mailto:your-email@example.com) or open an issue in the repository.
+For support, email [your-email@example.com](mailto:your-satya369@zohomail.in) or open an issue in the repository.
 
 ---
 
